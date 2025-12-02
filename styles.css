@@ -263,10 +263,50 @@ header.scrolled {
 
 /* Hero Section */
 .hero {
-    padding: var(--spacing-xl) 0;
+    padding: 0;
     text-align: center;
-    max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    display: block;
+    min-height: auto;
+}
+
+.hero-bg-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero .hero-content {
+    position: absolute;
+    top: 50%;
+    /* left: 50%; removed centering */
+    /* transform: translate(-50%, -50%); removed centering */
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 1;
+    margin: 0 auto;
+    /* Ensure text is readable if needed, but user asked for NO overlay on image. 
+       We might need text shadow or something if contrast is bad, but user specifically asked for "no dark opaque effect in front of it".
+       So I will leave it raw for now as requested. */
+}
+
+.hero-text-column {
+    max-width: 50%;
+    text-align: left;
+    /* padding-right: 2rem; Optional, can add if needed */
+}
+
+@media (max-width: 768px) {
+    .hero-text-column {
+        max-width: 100%;
+        text-align: center;
+        padding: 0 1rem;
+        /* On mobile, maybe we want a background or something since image might cover text? 
+           For now, sticking to request. */
+    }
 }
 
 .hero-subtitle {
