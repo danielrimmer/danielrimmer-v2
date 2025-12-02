@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Card Options</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-color: #346AEA;
+            --text-primary: #0F172A;
+            --text-secondary: #475569;
+            --border-color: #E2E8F0;
+            --font-main: 'Inter', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: #FFFFFF;
+            padding: 2rem;
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            padding: 2rem;
+            border-radius: 16px;
+            border: 2px solid var(--accent-color);
+            position: relative;
+        }
+
+        .label {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        /* Option 1: Soft Blue */
+        .option-1 {
+            background: linear-gradient(to bottom right, #EFF6FF, #DBEAFE);
+        }
+
+        /* Option 2: Warm Slate */
+        .option-2 {
+            background: linear-gradient(to bottom right, #F8FAFC, #E2E8F0);
+        }
+
+        /* Option 3: Pale Indigo */
+        .option-3 {
+            background: linear-gradient(to bottom right, #EEF2FF, #E0E7FF);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center; margin-bottom: 2rem;">Light Mode Options</h1>
+
+    <div class="container">
+        <!-- Option 1 -->
+        <div class="card option-1">
+            <div class="label">🚀 OPTION 1: Soft Blue</div>
+            <h3>The Complete Conversion Solution</h3>
+            <p>Maximum results: All three services working together.</p>
+            <p><strong>Why this works:</strong> Matches your brand blue but very subtle.</p>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="card option-2">
+            <div class="label">🚀 OPTION 2: Clean Slate</div>
+            <h3>The Complete Conversion Solution</h3>
+            <p>Maximum results: All three services working together.</p>
+            <p><strong>Why this works:</strong> Very neutral and professional.</p>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="card option-3">
+            <div class="label">🚀 OPTION 3: Pale Indigo</div>
+            <h3>The Complete Conversion Solution</h3>
+            <p>Maximum results: All three services working together.</p>
+            <p><strong>Why this works:</strong> A slightly warmer purple-blue tint.</p>
+        </div>
+    </div>
+</body>
+
+</html>

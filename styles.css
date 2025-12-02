@@ -1,0 +1,307 @@
+/* Modern Slate Design System */
+:root {
+    /* Color Palette */
+    --bg-color: #0F1117;
+    --surface-color: #1E212B;
+    --surface-hover: #2D3142;
+    --accent-color: #346AEA;
+    --accent-hover: #2952B8;
+    --text-primary: #E6E6E6;
+    --text-secondary: #A1A1AA;
+    --border-color: #2D3142;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    /* 8px */
+    --spacing-sm: 1rem;
+    /* 16px */
+    --spacing-md: 2rem;
+    /* 32px */
+    --spacing-lg: 4rem;
+    /* 64px */
+    --spacing-xl: 8rem;
+    /* 128px */
+
+    /* Typography */
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+
+    /* Header */
+    --header-bg: rgba(15, 17, 23, 0.9);
+    --header-bg-scrolled: rgba(15, 17, 23, 0.95);
+    --header-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+
+    /* Recommended Card */
+    --recommended-bg: linear-gradient(to bottom right, var(--surface-color), #2D3142);
+}
+
+[data-theme="light"] {
+    --bg-color: #FFFFFF;
+    --surface-color: #F8FAFC;
+    --surface-hover: #F1F5F9;
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --border-color: #E2E8F0;
+
+    --header-bg: rgba(255, 255, 255, 0.9);
+    --header-bg-scrolled: rgba(255, 255, 255, 0.95);
+    --header-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+    /* Recommended Card (Pale Indigo) */
+    --recommended-bg: linear-gradient(to bottom right, #EEF2FF, #E0E7FF);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+strong {
+    color: var(--text-primary);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+/* Layout Utilities */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.section {
+    padding: var(--spacing-lg) 0;
+}
+
+.grid {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+.grid-2 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-4-full {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .grid-4-full {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-4-full {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Components */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(129, 140, 248, 0.3);
+}
+
+.btn-icon {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    width: 40px;
+    height: 40px;
+}
+
+.btn-icon:hover {
+    background-color: var(--surface-hover);
+    border-color: var(--accent-color);
+}
+
+.card {
+    background-color: var(--surface-color);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
+}
+
+.card-recommended {
+    border-color: var(--accent-color);
+    background: var(--recommended-bg);
+}
+
+/* Header */
+header {
+    padding: var(--spacing-md) 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+header.scrolled {
+    background-color: var(--header-bg-scrolled);
+    box-shadow: var(--header-shadow);
+    padding: 1rem 0;
+    /* Slightly smaller padding on scroll */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}
+
+/* Hero Section */
+.hero {
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Features/Services */
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Pricing/Offer */
+.price-tag {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: var(--spacing-sm) 0;
+}
+
+.price-original {
+    text-decoration: line-through;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--surface-color);
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xl);
+    border-top: 1px solid var(--border-color);
+}

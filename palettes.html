@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Suggestions</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 40px;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .palette-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .palette-card {
+            width: 300px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .palette-header {
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .color-strip {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: monospace;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        .color-info {
+            background: rgba(0,0,0,0.2);
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .color-strip:hover .color-info {
+            opacity: 1;
+        }
+        
+        /* Palette 1: Modern Slate */
+        .p1-bg { background-color: #0F1117; color: #E6E6E6; }
+        .p1-surface { background-color: #1E212B; color: #E6E6E6; }
+        .p1-accent { background-color: #818CF8; color: #0F1117; }
+        .p1-text { background-color: #E6E6E6; color: #0F1117; }
+
+        /* Palette 2: Executive Earth */
+        .p2-bg { background-color: #1A1918; color: #E8E6E3; }
+        .p2-surface { background-color: #2D2B29; color: #E8E6E3; }
+        .p2-accent { background-color: #D4A373; color: #1A1918; }
+        .p2-text { background-color: #E8E6E3; color: #1A1918; }
+
+        /* Palette 3: Paper & Navy */
+        .p3-bg { background-color: #F9F8F6; color: #2D3748; }
+        .p3-surface { background-color: #EDF2F7; color: #2D3748; }
+        .p3-accent { background-color: #2C5282; color: #FFFFFF; }
+        .p3-text { background-color: #2D3748; color: #FFFFFF; }
+
+    </style>
+</head>
+<body>
+
+    <h1>Color Palette Suggestions</h1>
+
+    <div class="palette-container">
+        
+        <!-- Palette 1 -->
+        <div class="palette-card">
+            <div class="palette-header" style="background: #0F1117; color: #E6E6E6;">
+                Option 1: Modern Slate<br>
+                <span style="font-size: 0.8rem; font-weight: normal; opacity: 0.8;">Tech, Sleek, Dark Mode</span>
+            </div>
+            <div class="color-strip p1-bg">
+                <span class="color-info">Background: #0F1117</span>
+            </div>
+            <div class="color-strip p1-surface">
+                <span class="color-info">Surface: #1E212B</span>
+            </div>
+            <div class="color-strip p1-accent">
+                <span class="color-info">Accent: #818CF8</span>
+            </div>
+            <div class="color-strip p1-text">
+                <span class="color-info">Text: #E6E6E6</span>
+            </div>
+        </div>
+
+        <!-- Palette 2 -->
+        <div class="palette-card">
+            <div class="palette-header" style="background: #1A1918; color: #E8E6E3;">
+                Option 2: Executive Earth<br>
+                <span style="font-size: 0.8rem; font-weight: normal; opacity: 0.8;">Warm, Manly, Premium</span>
+            </div>
+            <div class="color-strip p2-bg">
+                <span class="color-info">Background: #1A1918</span>
+            </div>
+            <div class="color-strip p2-surface">
+                <span class="color-info">Surface: #2D2B29</span>
+            </div>
+            <div class="color-strip p2-accent">
+                <span class="color-info">Accent: #D4A373</span>
+            </div>
+            <div class="color-strip p2-text">
+                <span class="color-info">Text: #E8E6E3</span>
+            </div>
+        </div>
+
+        <!-- Palette 3 -->
+        <div class="palette-card">
+            <div class="palette-header" style="background: #F9F8F6; color: #2D3748;">
+                Option 3: Paper & Navy<br>
+                <span style="font-size: 0.8rem; font-weight: normal; opacity: 0.8;">Clean, Trustworthy, Light</span>
+            </div>
+            <div class="color-strip p3-bg">
+                <span class="color-info">Background: #F9F8F6</span>
+            </div>
+            <div class="color-strip p3-surface">
+                <span class="color-info">Surface: #EDF2F7</span>
+            </div>
+            <div class="color-strip p3-accent">
+                <span class="color-info">Accent: #2C5282</span>
+            </div>
+            <div class="color-strip p3-text">
+                <span class="color-info">Text: #2D3748</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
